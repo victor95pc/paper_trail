@@ -28,8 +28,6 @@ describe Gadget, type: :model do
         describe '#changed_notably?' do
           subject { Gadget.new(created_at: Time.now) }
 
-          it { expect(subject.private_methods).to include(:changed_notably?) }
-
           context "create events" do
             it { expect(subject.send(:changed_notably?)).to be true }
           end
